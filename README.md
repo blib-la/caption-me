@@ -60,7 +60,7 @@ Getting "Caption Me" running on your machine is a breeze. Just follow these simp
 - **Install**:
     ```shell
     npm install
-    npm build
+    npm run build
     ```
 - **Run**:
     ```shell
