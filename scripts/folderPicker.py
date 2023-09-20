@@ -1,12 +1,11 @@
 import tkinter as tk
 from tkinter import filedialog
 
-# Create a root window but hide it
-root = tk.Tk()
-root.withdraw()
+def select_directory():
+    root = tk.Tk()
+    root.withdraw() # Hide the main window
+    root.attributes('-topmost', True) # Make the dialog topmost
+    folder_selected = filedialog.askdirectory()
+    print(folder_selected)
 
-# Open folder picker and get the selected path
-folder_selected = filedialog.askdirectory()
-
-# Print the folder path (this can be read by your Node.js process)
-print(folder_selected)
+select_directory()
