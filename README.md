@@ -1,10 +1,9 @@
 # Caption Me 📸
 
-[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
+
 
 Easily manage, create, and update image captions with suggestions and autocomplete. Ideal for AI enthusiasts working with image datasets.
 
-<!-- tocstart -->
 
 <!-- toc -->
 
@@ -17,9 +16,13 @@ Easily manage, create, and update image captions with suggestions and autocomple
 
 <!-- tocstop -->
 
+---
+
 <p align="center">
   <img src="assets/screenshot-01.png" alt="screenshot 1" width="600"/>
 </p>
+
+[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
 
 ## 🚀 Getting Started
 
