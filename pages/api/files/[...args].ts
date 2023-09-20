@@ -1,10 +1,40 @@
-import { createReadStream, promises as fsPromises, statSync } from "fs";
+import crypto from "node:crypto";
+import { createReadStream, promises as fsPromises } from "node:fs";
 import path from "node:path";
 
 import { getRootFolder } from "@server/path";
 import * as fileType from "file-type";
 import type { NextApiRequest, NextApiResponse } from "next";
 import sharp from "sharp";
+
+async function saveToFolder(folderPath: string, fileName: string, buffer: Buffer) {
+	// Ensure the directory exists
+	await fsPromises.mkdir(folderPath, { recursive: true });
+
+	// Save the file
+	const fullPath = path.join(folderPath, fileName);
+	await fsPromises.writeFile(fullPath, buffer);
+	return fullPath;
+}
+
+function createPathHash(path: string): string {
+	return crypto.createHash("sha256").update(path).digest("hex");
+}
+
+async function resizeImage(
+	filePath: string,
+	dimensions: { width: number; height: number },
+	quality: number
+) {
+	return sharp(filePath)
+		.resize(dimensions.width, dimensions.height, {
+			fit: "inside",
+		})
+		.jpeg({
+			quality: quality * 100,
+		})
+		.toBuffer();
+}
 
 async function streamOptimizedImage(filePath: string, response: NextApiResponse) {
 	const readStream = createReadStream(filePath);
@@ -38,19 +68,48 @@ export default async function handler(request: NextApiRequest, response: NextApi
 		case "GET":
 			try {
 				const args = request.query.args as string[];
-				const filePath = path.join(rootFolder, ...args);
-				console.log(filePath);
+				const filePath = path.join(getRootFolder(request.cookies), ...args);
 
-				// Check if the file is an image
-				const stats = statSync(filePath);
+				const stats = await fsPromises.stat(filePath);
 				if (stats.isFile()) {
-					const bufferChunk =
-						createReadStream(filePath, { start: 0, end: 4100 }).read() ||
-						Buffer.alloc(0);
+					const readStream = createReadStream(filePath, { end: 4100 });
+
+					const chunks = [];
+					for await (const chunk of readStream) {
+						chunks.push(chunk);
+					}
+
+					const bufferChunk = Buffer.concat(chunks);
+
+					// Corrected to fileType.fileTypeFromBuffer
 					const type = await fileType.fileTypeFromBuffer(bufferChunk);
 
 					if (type?.mime.startsWith("image/")) {
-						await streamOptimizedImage(filePath, response);
+						const rootFolderPathHash = createPathHash(rootFolder);
+						const filePathHash = createPathHash(filePath);
+
+						const tempFolderPath = path.join(
+							process.cwd(),
+							".cm-cache",
+							rootFolderPathHash
+						);
+						const cachedFilePath = path.join(tempFolderPath, `${filePathHash}.jpg`);
+
+						try {
+							await fsPromises.access(cachedFilePath);
+							await streamOptimizedImage(cachedFilePath, response);
+						} catch (error) {
+							const dimensions = { width: 1600, height: 1600 };
+							const quality = 0.7;
+							const resizedBuffer = await resizeImage(filePath, dimensions, quality);
+
+							await saveToFolder(
+								tempFolderPath,
+								`${filePathHash}.jpg`,
+								resizedBuffer
+							);
+							await streamOptimizedImage(cachedFilePath, response);
+						}
 					} else {
 						await serveOtherFile(filePath, response);
 					}

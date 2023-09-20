@@ -40,6 +40,5 @@ next-env.d.ts
 # vscode
 .vscode/
 
-# training data
-/public/dataset/*
-!/public/dataset/.gitkeep
+# cache
+.cm-cache

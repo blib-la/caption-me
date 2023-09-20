@@ -14,7 +14,7 @@ import AutocompleteListbox from "@mui/joy/AutocompleteListbox";
 import Box from "@mui/joy/Box";
 import { useAtom } from "jotai";
 import type { HTMLProps, ReactNode } from "react";
-import React, { forwardRef } from "react";
+import React from "react";
 import { FixedSizeList as List } from "react-window";
 
 const defaultScale = {
@@ -169,10 +169,9 @@ interface SortableItemProps extends HTMLProps<HTMLDivElement> {
 	getTagProps: AutocompleteRenderGetTagProps;
 	index: number;
 }
-export const SortableItem = forwardRef(
-	({ children, getTagProps, index }: SortableItemProps, ref) => (
+export function SortableItem({ children, getTagProps, index }: SortableItemProps) {
+	return (
 		<Chip
-			ref={ref}
 			endDecorator={<ChipDelete {...getTagProps({ index })} />}
 			sx={{
 				borderRadius: 4,
@@ -180,8 +179,8 @@ export const SortableItem = forwardRef(
 		>
 			{children}
 		</Chip>
-	)
-);
+	);
+}
 
 export function CaptionEntries() {
 	const [selectedImage, setSelectedImage] = useHistoryImage();
