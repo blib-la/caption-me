@@ -4,6 +4,19 @@
 
 Easily manage, create, and update image captions with suggestions and autocomplete. Ideal for AI enthusiasts working with image datasets.
 
+<!-- tocstart -->
+
+<!-- toc -->
+
+- [🚀 Getting Started](#%F0%9F%9A%80-getting-started)
+  * [For the Techies](#for-the-techies)
+  * [For the Rest of Us](#for-the-rest-of-us)
+    + [Windows Users](#windows-users)
+    + [Everyone Else](#everyone-else)
+- [📢 Feedback & Support](#%F0%9F%93%A2-feedback--support)
+
+<!-- tocstop -->
+
 <p align="center">
   <img src="assets/screenshot-01.png" alt="screenshot 1" width="600"/>
 </p>
