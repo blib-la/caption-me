@@ -1,86 +1,62 @@
-# Caption Me
+# Caption Me 📸
 
 [![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
 
-<!-- toc -->
-
-- [Overview](#overview)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Feedback and Support](#feedback-and-support)
-- [Node Version Managers](#node-version-managers)
-
-<!-- tocstop -->
-
-## Overview
-
-Caption Me is an app designed to manage, create, and update captions for images. It makes the
-process easier by suggesting common tags and reusing terms you've used before in captions.
+Easily manage, create, and update image captions with suggestions and autocomplete. Ideal for AI enthusiasts working with image datasets.
 
 <p align="center">
   <img src="assets/screenshot-01.png" alt="screenshot 1" width="600"/>
 </p>
 
-## Installation
+## 🚀 Getting Started
 
-**Windows**
+Getting "Caption Me" running on your machine is a breeze. Just follow these simple steps:
 
-To install on a Windows system:
+### For the Techies
 
-```
-install.bat
-```
+1. **Clone the Repository**:
+    ```bash
+    git clone git@github.com:failfa-st/caption-me.git
+    ```
+2. **Enter the Project Directory**:
+    ```bash
+    cd caption-me
+    ```
+3. **Install the Needed Packages**:
+    ```bash
+    npm install
+    ```
+4. **Build the App**:
+    ```bash
+    npm run build
+    ```
+5. **Run the App**:
+    ```bash
+    npm start
+    ```
 
-**Cross Platform**
+### For the Rest of Us
 
-For installation on other platforms:
+#### Windows Users
+- **Install**: Double-click `install.bat`
+- **Run**: Double-click `run.bat`
 
-```
-npm install
-npm build
-```
+#### Everyone Else
+- **Install**:
+    ```shell
+    npm install
+    npm build
+    ```
+- **Run**:
+    ```shell
+    npm run build
+    ```
 
-## Running the Application
+## 📢 Feedback & Support
 
-**Windows**
+Something not right? Have a cool idea? We value your feedback.
 
-To run on a Windows system:
+- Join our [Discord community](https://discord.com/invite/m3TBB9XEkb) to chat.
+- Find an issue? Open an issue on GitHub.
 
-```
-run.bat
-```
-
-**Cross Platform**
-
-For running on other platforms:
-
-```
-npm run build
-```
-
-## Feedback and Support
-
-Encountered an issue or have a suggestion? Join our
-[Discord community](https://discord.com/invite/m3TBB9XEkb) or open an issue on GitHub. We're
-committed to enhancing your experience.
-
-## Node Version Managers
-
-Looking to manage your Node.js versions? Node.js offers a
-[list of alternative installation options](https://nodejs.org/en/download/package-manager#nvm).
-
-**Cross Platform**
-
--   [fnm](https://github.com/Schniz/fnm)
-
-**Windows**
-
--   [nvm-windows](https://github.com/coreybutler/nvm-windows)
--   [nodist](https://github.com/marcelklehr/nodist)
--   [nvs](https://github.com/jasongin/nvs)
-
-**macOS/Linux**
-
--   [nvm](https://github.com/nvm-sh/nvm)
--   [n](https://github.com/tj/n)
-
+Let's perfect "Caption Me" together! 🥳
