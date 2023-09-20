@@ -17,6 +17,10 @@
 Caption Me is an app designed to manage, create, and update captions for images. It makes the
 process easier by suggesting common tags and reusing terms you've used before in captions.
 
+<p align="center">
+  <img src="assets/screenshot-01.png" alt="screenshot 1" width="600"/>
+</p>
+
 ## Installation
 
 **Windows**
