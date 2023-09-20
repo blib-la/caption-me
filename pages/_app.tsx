@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<CssBaseline />
 			<Global
 				styles={css({
-					"html, body": { height: "100%" },
+					"html, body": { height: "100%", overflow: "hidden" },
 					"#__next": { display: "contents" },
 				})}
 			/>
