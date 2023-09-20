@@ -4,15 +4,14 @@
 
 Easily manage, create, and update image captions with suggestions and autocomplete. Ideal for AI enthusiasts working with image datasets.
 
-
 <!-- toc -->
 
-- [🚀 Getting Started](#%F0%9F%9A%80-getting-started)
+- [Getting Started](#getting-started)
   * [For the Techies](#for-the-techies)
   * [For the Rest of Us](#for-the-rest-of-us)
     + [Windows Users](#windows-users)
     + [Everyone Else](#everyone-else)
-- [📢 Feedback & Support](#%F0%9F%93%A2-feedback--support)
+- [Feedback & Support](#feedback--support)
 
 <!-- tocstop -->
 
@@ -24,7 +23,7 @@ Easily manage, create, and update image captions with suggestions and autocomple
 
 [![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
 
-## 🚀 Getting Started
+## Getting Started
 
 Getting "Caption Me" running on your machine is a breeze. Just follow these simple steps:
 
@@ -68,7 +67,7 @@ Getting "Caption Me" running on your machine is a breeze. Just follow these simp
     npm run build
     ```
 
-## 📢 Feedback & Support
+## Feedback & Support
 
 Something not right? Have a cool idea? We value your feedback.
 
