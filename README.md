@@ -7,8 +7,8 @@ Easily manage, create, and update image captions with suggestions and autocomple
 <!-- toc -->
 
 - [Getting Started](#getting-started)
-  * [For the Techies](#for-the-techies)
-  * [For the Rest of Us](#for-the-rest-of-us)
+  * [Step by Step](#step-by-step)
+  * [Quickstart](#quickstart)
     + [Windows Users](#windows-users)
     + [Everyone Else](#everyone-else)
 - [Feedback & Support](#feedback--support)
@@ -27,7 +27,7 @@ Easily manage, create, and update image captions with suggestions and autocomple
 
 Getting "Caption Me" running on your machine is a breeze. Just follow these simple steps:
 
-### For the Techies
+### Step by Step
 
 1. **Clone the Repository**:
     ```bash
@@ -50,7 +50,7 @@ Getting "Caption Me" running on your machine is a breeze. Just follow these simp
     npm start
     ```
 
-### For the Rest of Us
+### Quickstart
 
 #### Windows Users
 - **Install**: Double-click `install.bat`
