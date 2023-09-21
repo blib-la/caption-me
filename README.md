@@ -7,6 +7,7 @@ Easily manage, create, and update image captions with suggestions and autocomple
 <!-- toc -->
 
 - [Getting Started](#getting-started)
+- [One click installer](#one-click-installer)
   * [Step by Step](#step-by-step)
   * [Quickstart](#quickstart)
     + [Windows Users](#windows-users)
