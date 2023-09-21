@@ -7,7 +7,7 @@ Easily manage, create, and update image captions with suggestions and autocomple
 <!-- toc -->
 
 - [Getting Started](#getting-started)
-- [One click installer](#one-click-installer)
+  * [One click installer](#one-click-installer)
   * [Step by Step](#step-by-step)
   * [Quickstart](#quickstart)
     + [Windows Users](#windows-users)
@@ -28,7 +28,7 @@ Easily manage, create, and update image captions with suggestions and autocomple
 
 Getting "Caption Me" running on your machine is a breeze. Just follow these simple steps:
 
-## One click installer
+### One click installer
 
 **Windows**
 
