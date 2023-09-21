@@ -27,6 +27,17 @@ Easily manage, create, and update image captions with suggestions and autocomple
 
 Getting "Caption Me" running on your machine is a breeze. Just follow these simple steps:
 
+## One click installer
+
+**Windows**
+
+You can try the one-click-installer.bat from here: https://github.com/failfa-st/caption-me/releases/tag/v0.1.0-alpha.1
+It will clone the repo to you local machine and install all requirements.
+
+**Unix**
+
+Please read below.
+
 ### Step by Step
 
 1. **Clone the Repository**:
