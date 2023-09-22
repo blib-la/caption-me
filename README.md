@@ -215,8 +215,8 @@ autocomplete field. These are cleared each time you switch to a different image.
 
 ### Advanced Autocomplete Usage
 
-10. **Drag and Sort**: Within the autocomplete suggestions, you can **drag and sort** the listed
-    terms to prioritize the ones you use most frequently.
+10. **Drag and Sort**: Within the autocomplete tags, you can **drag and sort** the listed
+    terms.
 
 11. **Batch Entry**: For a quicker way to insert multiple terms, you can type them in a single line,
     separated by commas. Once you press Enter, these will automatically be split into separate tags.
