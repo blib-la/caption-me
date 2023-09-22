@@ -1,5 +1,4 @@
 import { allTagsAtom } from "@client/atoms";
-import { filter, renderRow } from "@client/components/index";
 import { MasonryContainer } from "@client/components/MasonryContainer";
 import { useHistoryImage } from "@client/hooks";
 import type { ClientRect } from "@dnd-kit/core";
@@ -9,18 +8,37 @@ import { Popper } from "@mui/base/Popper";
 import StyleIcon from "@mui/icons-material/Style";
 import type { AutocompleteRenderGetTagProps } from "@mui/joy";
 import { Chip, ChipDelete } from "@mui/joy";
-import Autocomplete from "@mui/joy/Autocomplete";
+import Autocomplete, { createFilterOptions } from "@mui/joy/Autocomplete";
 import AutocompleteListbox from "@mui/joy/AutocompleteListbox";
+import AutocompleteOption from "@mui/joy/AutocompleteOption";
 import Box from "@mui/joy/Box";
 import { useAtom } from "jotai";
 import type { HTMLProps, ReactNode } from "react";
 import React from "react";
+import type { ListChildComponentProps } from "react-window";
 import { FixedSizeList as List } from "react-window";
 
 const defaultScale = {
 	scaleX: 1,
 	scaleY: 1,
 };
+
+export const filter = createFilterOptions<string>();
+export function renderRow(props: ListChildComponentProps) {
+	const { data, index, style } = props;
+	const dataSet = data[index];
+	const inlineStyle = {
+		...style,
+		padding: 0,
+		top: (style.top as number) + 6,
+	};
+
+	return (
+		<AutocompleteOption component="div" style={inlineStyle}>
+			{dataSet}
+		</AutocompleteOption>
+	);
+}
 
 function getItemGap(rects: ClientRect[], index: number, activeIndex: number) {
 	const currentRect: ClientRect | undefined = rects[index];

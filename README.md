@@ -30,7 +30,7 @@
 ---
 
 <div align="center">
-  <img src="assets/screen-ui.png" alt="Caption Me Screenshot" width="600"/>
+  <img src="assets/screen-cutout.png" alt="Caption Me Screenshot" width="600"/>
   <p align="center"><i>A modern interface dedicated to your captioning needs.</i></p>
 </div>
 

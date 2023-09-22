@@ -1,11 +1,12 @@
 // Atom for the selected image
 import { allTagsAtom, imagesAtom } from "@client//atoms";
 import { useHistoryImage, useUpdateAndSwitchImage } from "@client/hooks";
+import CheckIcon from "@mui/icons-material/Check";
 import HistoryIcon from "@mui/icons-material/History";
+import RemoveIcon from "@mui/icons-material/Remove";
 import SaveIcon from "@mui/icons-material/Save";
 import UpdateIcon from "@mui/icons-material/Update";
-import { createFilterOptions } from "@mui/joy/Autocomplete";
-import AutocompleteOption from "@mui/joy/AutocompleteOption";
+import { Badge } from "@mui/joy";
 import Box from "@mui/joy/Box";
 import IconButton from "@mui/joy/IconButton";
 import ListItem from "@mui/joy/ListItem";
@@ -17,31 +18,15 @@ import { useAtom } from "jotai";
 import Image from "next/image";
 import React from "react";
 import AutoSizer from "react-virtualized-auto-sizer";
-import type { ListChildComponentProps } from "react-window";
 import { FixedSizeList as List } from "react-window";
 
 import type { ImageRowProps, TagRowProps } from ".types/client";
-
-export function renderRow(props: ListChildComponentProps) {
-	const { data, index, style } = props;
-	const dataSet = data[index];
-	const inlineStyle = {
-		...style,
-		padding: 0,
-		top: (style.top as number) + 6,
-	};
-
-	return (
-		<AutocompleteOption component="div" style={inlineStyle}>
-			{dataSet}
-		</AutocompleteOption>
-	);
-}
 
 export function ImageRow({ index, style, data }: ImageRowProps) {
 	const image = data.images[index];
 	const [selectedImage] = useHistoryImage();
 	const updateAndSwitch = useUpdateAndSwitchImage();
+	const caption = image.caption.filter(Boolean).join(", ").trim();
 	return (
 		<ListItem style={style}>
 			<ListItemButton
@@ -50,25 +35,30 @@ export function ImageRow({ index, style, data }: ImageRowProps) {
 					await updateAndSwitch(image);
 				}}
 			>
-				<Image
-					src={image.publicPath}
-					alt={`Image ${index}`}
-					width={image.width}
-					height={image.height}
-					style={{ objectFit: "contain", height: 142, width: 142 }}
-				/>
+				<Badge
+					color={caption.length ? "success" : "danger"}
+					badgeContent={caption.length ? <CheckIcon /> : <RemoveIcon />}
+					size="lg"
+					sx={{ mt: 3, mr: 3 }}
+				>
+					<Image
+						src={image.publicPath}
+						alt={`Image ${index}`}
+						width={image.width}
+						height={image.height}
+						style={{ objectFit: "contain", height: 142, width: 142 }}
+					/>
+				</Badge>
 				<Box sx={{ flex: 1, alignSelf: "stretch", pl: 2 }}>
 					<Typography level="body-lg" sx={{ mb: 2 }}>
 						Image {index + 1}
 					</Typography>
-					<Typography sx={{ mt: 2 }}>{image.caption.join(", ")}</Typography>
+					<Typography sx={{ mt: 2 }}>{caption}</Typography>
 				</Box>
 			</ListItemButton>
 		</ListItem>
 	);
 }
-
-export const filter = createFilterOptions<string>();
 
 export function TagRow({ index, style, data }: TagRowProps) {
 	const tag = data.tags[index];
