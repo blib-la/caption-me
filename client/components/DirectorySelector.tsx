@@ -1,6 +1,8 @@
 import { allTagsAtom, imagesAtom, selectedImageAtom } from "@client/atoms";
+import FolderIcon from "@mui/icons-material/Folder";
 import RefreshIcon from "@mui/icons-material/Refresh";
-import { Button, Input, Sheet } from "@mui/joy";
+import ReplayIcon from "@mui/icons-material/Replay";
+import { Input, Sheet, Tooltip } from "@mui/joy";
 import IconButton from "@mui/joy/IconButton";
 import axios from "axios";
 import { useAtom } from "jotai";
@@ -9,7 +11,6 @@ import { useState, useEffect } from "react";
 
 import type { ImageModel } from ".types/client";
 import type { BooruItem } from ".types/client";
-
 function normalizeWindowsPath(path: string) {
 	return path.replace(/\\/g, "/");
 }
@@ -93,6 +94,16 @@ const DirectorySelector = () => {
 		}
 	};
 
+	const deleteCache = async () => {
+		setSelectedImage(null);
+		try {
+			await axios.post("/api/delete-cache", { directory: path });
+			await reload();
+		} catch (error) {
+			console.error("Failed to delete cache:", error);
+		}
+	};
+
 	return (
 		<Sheet
 			sx={{
@@ -104,22 +115,33 @@ const DirectorySelector = () => {
 				p: 1,
 			}}
 		>
-			<Button onClick={selectDirectory} sx={{ minWidth: "max-content" }}>
-				Select Directory
-			</Button>
 			<Input
 				fullWidth
 				value={path}
 				aria-label="Enter the path to the folder"
+				startDecorator={
+					<Tooltip disableInteractive title="Select Directory">
+						<IconButton aria-label="select directory" onClick={selectDirectory}>
+							<FolderIcon />
+						</IconButton>
+					</Tooltip>
+				}
 				endDecorator={
-					<IconButton onClick={reload}>
-						<RefreshIcon />
-					</IconButton>
+					<Tooltip disableInteractive title="Load Directory">
+						<IconButton aria-label="load directory" onClick={reload}>
+							<RefreshIcon />
+						</IconButton>
+					</Tooltip>
 				}
 				onChange={event => {
 					setPath(normalizeWindowsPath(event.target.value));
 				}}
 			/>
+			<Tooltip disableInteractive title="Delete Cache">
+				<IconButton aria-label="delete cache" onClick={deleteCache}>
+					<ReplayIcon />
+				</IconButton>
+			</Tooltip>
 		</Sheet>
 	);
 };

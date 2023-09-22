@@ -1,7 +1,7 @@
-import crypto from "node:crypto";
 import { createReadStream, promises as fsPromises } from "node:fs";
 import path from "node:path";
 
+import { createPathHash } from "@server/createPathHash";
 import { getRootFolder } from "@server/path";
 import * as fileType from "file-type";
 import type { NextApiRequest, NextApiResponse } from "next";
@@ -15,10 +15,6 @@ async function saveToFolder(folderPath: string, fileName: string, buffer: Buffer
 	const fullPath = path.join(folderPath, fileName);
 	await fsPromises.writeFile(fullPath, buffer);
 	return fullPath;
-}
-
-function createPathHash(path: string): string {
-	return crypto.createHash("sha256").update(path).digest("hex");
 }
 
 async function resizeImage(
