@@ -151,18 +151,21 @@ spaces.
   <img src="assets/screen-directory.png" alt="Directory Selection" width="400"/>
 </p>
 
-1. **Select Directory**: To begin, either click the folder icon located at the left of the input
-   field at the top or manually paste the directory path.
+1.  **Select Directory**: To begin, either click the folder icon located at the left of the input
+    field at the top or manually paste the directory path.
 
-    - After entering the path, click the adjacent **load/reload** button.
-      <img src="assets/screen-load-reload.png" alt="Load/Reload Button" width="50"/>
+-   After entering the path, click the adjacent **load/reload** button.
 
-2. **Reload Directory**: If you've made changes to the directory, such as adding or deleting images,
-   click the **load/reload** button to refresh the image list.
+<p align="center">
+  <img src="assets/screen-load-reload.png" alt="Load/Reload Button" width="150"/>
+</p>
 
-3. **Clear Cache (optional)**: To ensure that the app recognizes new changes in the directory,
-   especially new or deleted images, use the **clear cache** button next to the **load/reload**
-   button.
+2.  **Reload Directory**: If you've made changes to the directory, such as adding or deleting
+    images, click the **load/reload** button to refresh the image list.
+
+3.  **Clear Cache (optional)**: To ensure that the app recognizes new changes in the directory,
+    especially new or deleted images, use the **clear cache** button next to the **load/reload**
+    button.
 
 <p align="center">
    <img src="assets/screen-cache.png" alt="Clear Cache Button" width="150"/>
@@ -206,9 +209,9 @@ spaces.
 
 9. **Undo/Redo**: History functions, including **undo** and **redo**, are available next to the
 autocomplete field. These are cleared each time you switch to a different image.
- <p align="center">
-    <img src="assets/screen-history-button.png" alt="History Buttons" width="150"/>
- </p>
+    <p align="center">
+       <img src="assets/screen-history-button.png" alt="History Buttons" width="150"/>
+    </p>
 
 ### Advanced Autocomplete Usage
 
