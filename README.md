@@ -97,9 +97,15 @@ For Unix-based systems, follow these instructions:
 
 ## Quickstart
 
+### Clone repo
+
+```bash
+git clone git@github.com:failfa-st/caption-me.git
+```
+
 ### Windows
 
-- **Install**: Double-click `one-click-installer.bat`
+- **Install**: Double-click `install.bat`
 - **Run**: Double-click `run.bat`
 
 ### macOS/Linux
