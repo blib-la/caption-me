@@ -21,8 +21,15 @@
   * [Automated Installer (Windows)](#automated-installer-windows)
   * [Manual Setup](#manual-setup)
 - [Quickstart](#quickstart)
+  * [Clone repo](#clone-repo)
   * [Windows](#windows)
   * [macOS/Linux](#macoslinux)
+- [Usage Guide: Mastering Caption Me](#usage-guide-mastering-caption-me)
+  * [Navigating the Interface](#navigating-the-interface)
+  * [Directory Selection](#directory-selection)
+  * [Working with Images](#working-with-images)
+  * [Captioning and Autocomplete](#captioning-and-autocomplete)
+  * [Saving Your Work](#saving-your-work)
 - [Feedback & Support](#feedback--support)
 
 <!-- tocstop -->
@@ -114,6 +121,58 @@ git clone git@github.com:failfa-st/caption-me.git
     ```bash
     npm install && npm run build && npm start
     ```
+
+---
+
+## Usage Guide: Mastering Caption Me
+
+Caption Me is designed to be user-friendly, yet offers a range of features to facilitate your captioning process. Below is a detailed guide on how to get the most out of the tool.
+
+---
+
+### Navigating the Interface
+
+When you launch Caption Me, you'll notice the main interface divided into specific sections for ease of use. Your working directory, image list, preview pane, and caption editor all have dedicated spaces.
+
+---
+
+### Directory Selection
+
+1. **Select Directory**: To begin, either click the folder icon located at the left of the input field at the top or manually paste the directory path.
+    - After entering the path, click the adjacent **load/reload** button.
+
+2. **Reload Directory**: If you've made changes to the directory, such as adding or deleting images, click the **load/reload** button to refresh the image list.
+
+3. **Clear Cache (optional)**: To ensure that the app recognizes new changes in the directory, especially new or deleted images, use the **clear cache** button next to the **load/reload** button.
+
+---
+
+### Working with Images
+
+4. **Browse Image List**: Once a directory is loaded, you'll see a scrollable list of images on the left side of the interface. Each image listed here also displays its title and caption status.
+    - A **red/green** indicator next to the image signifies whether a caption exists for that image.
+
+5. **Preview Image**: Above this image list is a preview pane where a larger version of the currently selected image will be displayed, aiding in more accurate captioning.
+
+6. **Select an Image**: To work on a specific image, simply click on it from the list to load it into the preview pane and activate the caption editor.
+
+---
+
+### Captioning and Autocomplete
+
+7. **Caption Editor**: Upon selecting an image, an autocomplete field activates. Begin typing your caption here.
+
+8. **Utilize Autocomplete**: As you type, the autocomplete feature suggests known terms to speed up your captioning process.
+
+9. **Undo/Redo**: History functions, including **undo** and **redo**, are available next to the autocomplete field. These are cleared each time you switch to a different image.
+
+---
+
+### Saving Your Work
+
+10. **Automatic Save**: Caption Me automatically saves changes to the caption when you switch between images.
+
+11. **Manual Save**: For explicit saving, click the **save icon** situated next to the history buttons.
 
 ---
 
