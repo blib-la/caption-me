@@ -4,10 +4,10 @@
 
 ---
 
-<p align="center">
+<div align="center">
   <img src="assets/gen.png" alt="Caption Me Screenshot" width="400"/>
   <p align="center"><i>collage style, woman, looking at viewer, torn paper, magazine, newspaper</i></p>
-</p>
+</div>
 
 ---
 
@@ -29,10 +29,10 @@
 
 ---
 
-<p align="center">
+<div align="center">
   <img src="assets/screen-ui.png" alt="Caption Me Screenshot" width="600"/>
   <p align="center"><i>A modern interface dedicated to your captioning needs.</i></p>
-</p>
+</div>
 
 ---
 
