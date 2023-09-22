@@ -140,7 +140,7 @@ Caption Me is designed to be user-friendly, yet offers a range of features to fa
 When you launch Caption Me, you'll notice the main interface divided into specific sections for ease of use. Your working directory, image list, preview pane, and caption editor all have dedicated spaces.
 
 <p align="center">
-  <img src="assets/screen-ui.png" alt="Caption Me Interface" width="600"/>
+  <img src="assets/screen-cutout.png" alt="Caption Me Interface" width="600"/>
   <p align="center"><i>The user-friendly Caption Me Interface</i></p>
 </p>
 
@@ -148,8 +148,8 @@ When you launch Caption Me, you'll notice the main interface divided into specif
 
 ### Directory Selection
 
-<p align="left">
-  <img src="assets/screen-directory.png" alt="Directory Selection" width="150"/>
+<p align="center">
+  <img src="assets/screen-directory.png" alt="Directory Selection" width="400"/>
 </p>
 
 1. **Select Directory**: To begin, either click the folder icon located at the left of the input field at the top or manually paste the directory path.
@@ -159,7 +159,10 @@ When you launch Caption Me, you'll notice the main interface divided into specif
 2. **Reload Directory**: If you've made changes to the directory, such as adding or deleting images, click the **load/reload** button to refresh the image list.
 
 3. **Clear Cache (optional)**: To ensure that the app recognizes new changes in the directory, especially new or deleted images, use the **clear cache** button next to the **load/reload** button.
-   <img src="assets/screen-cache.png" alt="Clear Cache Button" width="50"/>
+
+<p align="center">
+   <img src="assets/screen-cache.png" alt="Clear Cache Button" width="150"/>
+</p>
 
 ---
 
