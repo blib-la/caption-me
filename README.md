@@ -1,17 +1,28 @@
-# Caption Me 📸
+# Caption Me: Simplifying Image Captioning
 
+**Caption Me** is designed to streamline the creation, management, and updating of image captions, empowering you to focus on what really matters.
 
+---
 
-Easily manage, create, and update image captions with suggestions and autocomplete. Ideal for AI enthusiasts working with image datasets.
+<p align="center">
+  <img src="assets/gen.png" alt="Caption Me Screenshot" width="400"/>
+  <p align="center"><i>collage style, woman, looking at viewer, torn paper, magazine, newspaper</i></p>
+</p>
+
+---
+
+[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
 
 <!-- toc -->
 
-- [Getting Started](#getting-started)
-  * [One click installer](#one-click-installer)
-  * [Step by Step](#step-by-step)
-  * [Quickstart](#quickstart)
-    + [Windows Users](#windows-users)
-    + [Everyone Else](#everyone-else)
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+  * [Automated Installer (Windows)](#automated-installer-windows)
+  * [Manual Setup](#manual-setup)
+- [Quickstart](#quickstart)
+  * [Windows](#windows)
+  * [macOS/Linux](#macoslinux)
 - [Feedback & Support](#feedback--support)
 
 <!-- tocstop -->
@@ -19,71 +30,94 @@ Easily manage, create, and update image captions with suggestions and autocomple
 ---
 
 <p align="center">
-  <img src="assets/screenshot-01.png" alt="screenshot 1" width="600"/>
+  <img src="assets/screen-ui.png" alt="Caption Me Screenshot" width="600"/>
+  <p align="center"><i>A modern interface dedicated to your captioning needs.</i></p>
 </p>
 
-[![Discord](https://img.shields.io/discord/1091306623819059300?color=7289da&label=Discord&logo=discord&logoColor=fff&style=for-the-badge)](https://discord.com/invite/m3TBB9XEkb)
+---
 
-## Getting Started
+## Introduction
 
-Getting "Caption Me" running on your machine is a breeze. Just follow these simple steps:
+**Caption Me** is built to simplify the image captioning process. Whether you're a professional or a hobbyist, setting up Caption Me is straightforward and intuitive.
 
-### One click installer
+## Prerequisites
 
-**Windows**
+To ensure a seamless experience, please install the following software:
 
-You can try the one-click-installer.bat from here: https://github.com/failfa-st/caption-me/releases/tag/v0.1.0-alpha.1
-It will clone the repo to you local machine and install all requirements.
+- **Python 3**: Back-end operations
+    - [Download Python 3](https://www.python.org/downloads/)
+- **Node.js 18**: Dependency management
+    - [Download Node.js 18](https://nodejs.org/en/download/)
+- **Git**: Source code retrieval
+    - [Download Git](https://git-scm.com/downloads)
 
-**Unix**
+---
 
-Please read below.
+## Installation
 
-### Step by Step
+### Automated Installer (Windows)
 
-1. **Clone the Repository**:
+1. **Download**: Obtain the `one-click-installer.bat` [here](https://github.com/failfa-st/caption-me/releases/tag/v0.1.0-alpha.2).
+2. **Execute**: Double-click the `.bat` file.
+3. **Launch**: Open `run.sh` in the newly-created `caption-me` directory.
+
+> **Note**: Re-running `one-click-installer.bat` updates the software. Store it separately for convenience.
+> ```
+> ├── caption-me-root
+> │   ├── one-click-installer.bat
+> │   └── caption-me (auto-generated)
+> ```
+
+### Manual Setup
+
+For Unix-based systems, follow these instructions:
+
+1. **Clone Repository**
     ```bash
     git clone git@github.com:failfa-st/caption-me.git
     ```
-2. **Enter the Project Directory**:
+2. **Enter Directory**
     ```bash
     cd caption-me
     ```
-3. **Install the Needed Packages**:
+3. **Install Dependencies**
     ```bash
     npm install
     ```
-4. **Build the App**:
+4. **Compile App**
     ```bash
     npm run build
     ```
-5. **Run the App**:
+5. **Run App**
     ```bash
     npm start
     ```
 
-### Quickstart
+---
 
-#### Windows Users
-- **Install**: Double-click `install.bat`
+## Quickstart
+
+### Windows
+
+- **Install**: Double-click `one-click-installer.bat`
 - **Run**: Double-click `run.bat`
 
-#### Everyone Else
-- **Install**:
-    ```shell
-    npm install
-    npm run build
+### macOS/Linux
+
+- **One-liner**:
+    ```bash
+    npm install && npm run build && npm start
     ```
-- **Run**:
-    ```shell
-    npm start
-    ```
+
+---
 
 ## Feedback & Support
 
-Something not right? Have a cool idea? We value your feedback.
+We value your input. Reach out to us through these channels:
 
-- Join our [Discord community](https://discord.com/invite/m3TBB9XEkb) to chat.
-- Find an issue? Open an issue on GitHub.
+- **Chat**: Engage with our [Discord community](https://discord.com/invite/m3TBB9XEkb).
+- **Issue Tracker**: Encountered a bug? Report it on [GitHub Issues](https://github.com/failfa-st/caption-me/issues).
 
-Let's perfect "Caption Me" together! 🥳
+---
+
+Tailor your captioning experience with **Caption Me**. Thank you for choosing us.
