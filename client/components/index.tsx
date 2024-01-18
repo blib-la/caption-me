@@ -1,8 +1,10 @@
 // Atom for the selected image
-import { allTagsAtom, imagesAtom } from "@client//atoms";
+import { allTagsAtom, imagesAtom, selectedEditingMode } from "@client//atoms";
 import { useHistoryImage, useUpdateAndSwitchImage } from "@client/hooks";
 import CheckIcon from "@mui/icons-material/Check";
 import HistoryIcon from "@mui/icons-material/History";
+import LocalOfferIcon from "@mui/icons-material/LocalOffer";
+import NotesIcon from "@mui/icons-material/Notes";
 import RemoveIcon from "@mui/icons-material/Remove";
 import SaveIcon from "@mui/icons-material/Save";
 import UpdateIcon from "@mui/icons-material/Update";
@@ -89,9 +91,28 @@ export function TagRow({ index, style, data }: TagRowProps) {
 export function Buttons() {
 	const [selectedImage, , api] = useHistoryImage();
 	const [images, setImages] = useAtom(imagesAtom);
+	const [, setMode] = useAtom(selectedEditingMode);
 
 	return (
 		<Stack spacing={1} sx={{ p: 1 }}>
+			<IconButton
+				color="primary"
+				variant="solid"
+				onClick={() => {
+					setMode("text");
+				}}
+			>
+				<NotesIcon />
+			</IconButton>
+			<IconButton
+				color="primary"
+				variant="solid"
+				onClick={() => {
+					setMode("tags");
+				}}
+			>
+				<LocalOfferIcon />
+			</IconButton>
 			<IconButton
 				// Disabled={!api.modifiedSinceFlush}
 				color="primary"

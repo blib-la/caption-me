@@ -7,7 +7,7 @@ import { arrayMove } from "@dnd-kit/sortable";
 import { Popper } from "@mui/base/Popper";
 import StyleIcon from "@mui/icons-material/Style";
 import type { AutocompleteRenderGetTagProps } from "@mui/joy";
-import { Chip, ChipDelete } from "@mui/joy";
+import { Chip, ChipDelete, Textarea } from "@mui/joy";
 import Autocomplete, { createFilterOptions } from "@mui/joy/Autocomplete";
 import AutocompleteListbox from "@mui/joy/AutocompleteListbox";
 import AutocompleteOption from "@mui/joy/AutocompleteOption";
@@ -17,6 +17,8 @@ import type { HTMLProps, ReactNode } from "react";
 import React from "react";
 import type { ListChildComponentProps } from "react-window";
 import { FixedSizeList as List } from "react-window";
+
+import type { BooruItem } from ".types/client";
 
 const defaultScale = {
 	scaleX: 1,
@@ -273,6 +275,46 @@ export function CaptionEntries() {
 					onBlur={() => {
 						setAllTags(previousTags => {
 							const combinedTags = [
+								...previousTags,
+								...(selectedImage?.caption.map(tagName => ({
+									tagName: tagName.replace(/_/g, " "),
+									score: "0",
+									unknownColumn: "0",
+									aliases: "",
+								})) ?? []),
+							];
+
+							return Array.from(
+								combinedTags
+									.reduce((map, tag) => map.set(tag.tagName, tag), new Map())
+									.values()
+							);
+						});
+					}}
+				/>
+			)}
+		</Box>
+	);
+}
+
+export function CaptionText() {
+	const [selectedImage, setSelectedImage] = useHistoryImage();
+	const [, setAllTags] = useAtom(allTagsAtom);
+
+	return (
+		<Box sx={{ flex: 1, p: 1 }}>
+			{selectedImage && (
+				<Textarea
+					value={selectedImage.caption.join(",")}
+					onChange={event => {
+						setSelectedImage({
+							...selectedImage,
+							caption: event.target.value.split(","),
+						});
+					}}
+					onBlur={() => {
+						setAllTags(previousTags => {
+							const combinedTags: BooruItem[] = [
 								...previousTags,
 								...(selectedImage?.caption.map(tagName => ({
 									tagName: tagName.replace(/_/g, " "),

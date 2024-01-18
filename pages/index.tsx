@@ -2,9 +2,9 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 
-import { allTagsAtom, imagesAtom, selectedImageAtom } from "@client//atoms";
+import { allTagsAtom, imagesAtom, selectedEditingMode, selectedImageAtom } from "@client//atoms";
 import { Buttons, ImageList, ImagePreview, Tags } from "@client/components";
-import { CaptionEntries } from "@client/components/CaptionEntries";
+import { CaptionEntries, CaptionText } from "@client/components/CaptionEntries";
 import DirectorySelector from "@client/components/DirectorySelector";
 import Box from "@mui/joy/Box";
 import Grid from "@mui/joy/Grid";
@@ -29,6 +29,7 @@ export default function Page({
 	const [, setAllTags] = useAtom(allTagsAtom);
 	const [, setImages] = useAtom(imagesAtom);
 	const [selectedImage] = useAtom(selectedImageAtom);
+	const [mode] = useAtom(selectedEditingMode);
 
 	useEffect(() => {
 		setImages(initialImages);
@@ -54,7 +55,7 @@ export default function Page({
 				<Grid xs={1} md sx={{ display: "flex", flexDirection: "column" }}>
 					{selectedImage && (
 						<Box sx={{ display: "flex" }}>
-							<CaptionEntries />
+							{mode === "tags" ? <CaptionEntries /> : <CaptionText />}
 							<Buttons />
 						</Box>
 					)}

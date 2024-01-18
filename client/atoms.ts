@@ -4,6 +4,7 @@ import type { BooruItem, ImageModel } from ".types/client";
 
 export const selectedImageAtom = atom<ImageModel | null>(null);
 export const selectedCaptionAtom = atom<number>(-1);
+export const selectedEditingMode = atom<"tags" | "text">("tags");
 export const allTagsAtom = atom<BooruItem[]>([]);
 // Atom for all images
 export const imagesAtom = atom<ImageModel[]>([]);
